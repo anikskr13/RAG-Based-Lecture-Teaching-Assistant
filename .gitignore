@@ -1,0 +1,17 @@
+# Large media & generated vector store files
+Videos/*.mp4
+Audios/*.mp3
+embeddings.joblib
+response.txt
+
+# Python & Jupyter cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/
+.env
+
+# Virtual environments
+venv/
+.venv/
+env/
