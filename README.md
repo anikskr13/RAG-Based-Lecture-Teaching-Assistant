@@ -48,9 +48,8 @@ conda activate ml
 # GPU (CUDA 12.1 example):
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
-# 4. Install remaining project dependencies
-pip install -r whisper/requirements.txt
-pip install pandas scikit-learn joblib requests py-cpuinfo
+# 4. Install OpenAI Whisper & project dependencies
+pip install openai-whisper pandas scikit-learn joblib requests py-cpuinfo
 ```
 
 ### Option B: Using Python Virtual Environment (`venv`)
@@ -66,8 +65,7 @@ python -m venv venv
 source venv/bin/activate
 
 # 3. Install dependencies
-pip install -r whisper/requirements.txt
-pip install pandas scikit-learn joblib requests py-cpuinfo
+pip install openai-whisper pandas scikit-learn joblib requests py-cpuinfo
 ```
 
 ---
@@ -114,7 +112,6 @@ python process_incoming_Query(6th).py
 ├── Audios/              # Generated MP3 audio files
 ├── Transcripts/         # Raw Whisper JSON outputs
 ├── newTranscripts/      # Merged context chunk JSONs
-├── whisper/             # Whisper source submodule
 ├── embeddings.joblib    # Serialized DataFrame containing vector store
 └── response.txt         # Output text file for the latest LLM query response
 ```
