@@ -8,8 +8,8 @@ import subprocess
 
 
 # ─── Configuration ───────────────────────────────────────────────────────────
-INPUT_DIR = "Videos"               # folder containing raw MP4 video files
-OUTPUT_DIR = "Audios"              # folder where extracted MP3 audio files will be saved
+INPUT_DIR = "../Videos"               # folder containing raw MP4 video files
+OUTPUT_DIR = "../Audios"              # folder where extracted MP3 audio files will be saved
 
 
 def convert_videos_to_mp3(input_dir=INPUT_DIR, output_dir=OUTPUT_DIR):
@@ -33,6 +33,10 @@ def convert_videos_to_mp3(input_dir=INPUT_DIR, output_dir=OUTPUT_DIR):
         )
 
     print("✅ All videos converted from MP4 to MP3")
+
+
+if __name__ == "__main__":
+    convert_videos_to_mp3()verted from MP4 to MP3")
 
 
 if __name__ == "__main__":

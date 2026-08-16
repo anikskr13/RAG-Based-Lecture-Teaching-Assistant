@@ -13,18 +13,18 @@ import joblib
 # ─── Configuration ───────────────────────────────────────────────────────────
 OLLAMA_URL = "http://localhost:11434/api/embed"
 EMBEDDING_MODEL = "bge-m3"
-TRANSCRIPT_DIR = "newTranscripts"  # folder with merged chunks (output of merge_chunks)
-OUTPUT_FILE = "embeddings.joblib"
+TRANSCRIPT_DIR = "../newTranscripts"  # folder with merged chunks (output of merge_chunks)
+OUTPUT_FILE = "../embeddings.joblib"
 
 
 def create_embeddings(text_list, model=EMBEDDING_MODEL):
     """Send a list of texts to Ollama and return their vector embeddings."""
     response = requests.post(OLLAMA_URL, json={
         "model": model,
-        "input": text_list,  # use "input" for batch, not "prompt"
+        "input": text_list,
     })
     response.raise_for_status()
-    return response.json()["embeddings"]  # "embeddings" for batch, "embedding" for single
+    return response.json()["embeddings"]
 
 
 def build_embedding_store(transcript_dir=TRANSCRIPT_DIR, output_file=OUTPUT_FILE):
@@ -56,6 +56,10 @@ def build_embedding_store(transcript_dir=TRANSCRIPT_DIR, output_file=OUTPUT_FILE
     df = pd.DataFrame.from_records(all_chunks)
     joblib.dump(df, output_file)
     print(f"\n💾 {output_file} created — {len(df)} total chunks embedded")
+
+
+if __name__ == "__main__":
+    build_embedding_store()le} created — {len(df)} total chunks embedded")
 
 
 if __name__ == "__main__":

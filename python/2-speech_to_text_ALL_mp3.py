@@ -1,5 +1,5 @@
 """
-Step 3: Batch transcribe ALL MP3 files in Audios/ using Whisper.
+Step 2: Batch transcribe ALL MP3 files in Audios/ using Whisper.
 Saves JSON transcripts (with chunks + full text) to Transcripts/.
 """
 
@@ -10,8 +10,8 @@ import torch
 
 
 # ─── Configuration ───────────────────────────────────────────────────────────
-AUDIO_DIR = "Audios"              # folder containing MP3 audio files
-OUTPUT_DIR = "Transcripts"         # folder where raw Whisper JSON transcripts are saved
+AUDIO_DIR = "../Audios"              # folder containing MP3 audio files
+OUTPUT_DIR = "../Transcripts"         # folder where raw Whisper JSON transcripts are saved
 MODEL_SIZE = "small"               # Whisper model size (tiny, base, small, medium, large, turbo)
 
 
@@ -76,6 +76,10 @@ def transcribe_all(audio_dir=AUDIO_DIR, output_dir=OUTPUT_DIR, model_size=MODEL_
             json.dump(transcript, f, indent=4)
 
     print("💾 All files transcribed and saved")
+
+
+if __name__ == "__main__":
+    transcribe_all()
 
 
 if __name__ == "__main__":

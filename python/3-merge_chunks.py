@@ -1,6 +1,6 @@
 """
-Step 3.5: Merge small transcript chunks into larger ones for better embedding context.
-Groups every N consecutive chunks together.
+Step 3: Merge small transcript chunks into larger ones for better embedding context.
+Groups every N consecutive chunks together for improved semantic meaning.
 """
 
 import os
@@ -9,8 +9,8 @@ import math
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 CHUNKS_TO_MERGE = 5               # number of consecutive chunks to merge into one
-INPUT_DIR = "Transcripts"          # raw Whisper transcripts
-OUTPUT_DIR = "newTranscripts"      # merged chunks (used by mp3_to_json for embeddings)
+INPUT_DIR = "../Transcripts"          # raw Whisper transcripts
+OUTPUT_DIR = "../newTranscripts"      # merged chunks (used by mp3_to_json for embeddings)
 
 
 def merge_chunks(input_dir=INPUT_DIR, output_dir=OUTPUT_DIR, n=CHUNKS_TO_MERGE):
@@ -50,6 +50,10 @@ def merge_chunks(input_dir=INPUT_DIR, output_dir=OUTPUT_DIR, n=CHUNKS_TO_MERGE):
         print(f"✅ {filename}: {old_count} chunks → {len(new_chunks)} merged chunks")
 
     print("💾 All transcripts merged and saved")
+
+
+if __name__ == "__main__":
+    merge_chunks()transcripts merged and saved")
 
 
 if __name__ == "__main__":

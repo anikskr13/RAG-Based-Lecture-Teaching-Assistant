@@ -1,0 +1,26 @@
+# Core dependencies for RAG-based Teaching Assistant
+
+# Audio & Speech Processing
+openai-whisper==20241226
+torch>=2.0.0
+torchaudio>=2.0.0
+torchvision>=0.15.0
+
+# Data Processing
+pandas>=1.5.0
+numpy>=1.24.0
+joblib>=1.3.0
+
+# Embedding & Similarity Search
+scikit-learn>=1.3.0
+
+# HTTP Requests (for Ollama API)
+requests>=2.31.0
+
+# System Information
+py-cpuinfo>=9.0.0
+
+# Optional: FFmpeg (system package, not pip)
+# Windows: winget install ffmpeg
+# macOS: brew install ffmpeg
+# Linux: sudo apt install ffmpeg

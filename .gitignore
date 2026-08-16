@@ -4,6 +4,13 @@ Audios/*.mp3
 embeddings.joblib
 response.txt
 
+# Ignore all Jupyter notebooks
+*.ipynb
+
+# Ignore transcript folders
+newTranscripts/
+Transcripts/
+
 # Python & Jupyter cache
 __pycache__/
 *.py[cod]
